@@ -1,7 +1,6 @@
-# README — Versioned Collection & Frugal Skiplist Project
+ Versioned Collection & Frugal Skiplist Project
 
-## 👥 Project Members
-**Hani Karim Azizi** + Group members  
+ 
 Winter Semester 2025/2026 — NoSQL Project
 
 ---
@@ -150,6 +149,4 @@ Used for serializing NodeRecord objects to JSON.
 
 ---
 
-## 📞 Contact
 
-For project questions, contact **Hani Karim Azizi**.
