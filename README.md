@@ -168,7 +168,7 @@ Used for serializing NodeRecord objects to JSON.
     
 2. Internal Structure
 
-_Uses a TreeMap<K, VersionList<P>> to maintain keys in sorted order.
+-Uses a TreeMap<K, VersionList<P>> to maintain keys in sorted order.
 Uses a VersionListFactory<P> to create appropriate version lists:_
 
 * BackedVLinkedList<P>
@@ -178,7 +178,7 @@ Uses a VersionListFactory<P> to create appropriate version lists:_
 
   Implemented Methods
     - long append(K key, P payload)
- Assigns the next version number and appends the payload to the appropriate VersionList.
+    Assigns the next version number and appends the payload to the appropriate VersionList.
     Map.Entry<K,P> get(K key, long timestamp)
     Returns the version of the record visible at timestamp t.
     Iterator<Map.Entry<K,P>> rangeSnapshot(...)
@@ -234,14 +234,14 @@ Explanation:
         10,000, 50,000, 100,000, 500,000
         
 Results (typical averages):
-    Timestamp	VLinkedList (ns)	FrugalSkiplist (ns)
-    10	        380M	            22M
-    100	        406M	            24M
-    500	        401M	            24M
-    1,000	    421M	            25M
-    5,000	    381M	            23M
+    Timestamp	 VLinkedList (ns)	 FrugalSkiplist (ns)
+    10	         380M	                 22M
+    100	        406M	                 24M
+    500	        401M	                 24M
+    1,000	      421M	                 25M
+    5,000	      381M	                 23M
     …	…	…
-    500,000	~650k	~790k
+    500,000	    ~650k	              ~790k
     
 
 ✔ Explanation
@@ -297,7 +297,6 @@ which also implements MultiVersionMap<K,P>.
 4. We compute the visible version of nextKey at the same timestamp.
 5. We store the pointer to that node inside the new node’s kRidgyKey field.
 6. This gives us a shortcut into the next skiplist.
-7. 
 
 
 ## 📌 1.4(c) – Theoretical Improvement for Range-Snapshot Using Parent Pointers
